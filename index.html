@@ -8,6 +8,14 @@
       gtag('js', new Date());
 
       gtag('config', 'G-C2VBL142KX');
+
+      //When clicks it sends an event
+      function sendEvent() {
+        gtag('event', 'conversion', {
+          'event_category': 'button_click',
+          'event_label': 'convert_button'
+        });
+      }
     </script>
     <script src="romans.js"></script>
     <link rel="stylesheet" href="romans.css">
@@ -23,7 +31,7 @@
         <div class="group">
           <input type="text" name="conversion-input" />
         </div>
-        <span class="convert-button">Convert</span>
+        <span class="convert-button" onclick="sendEvent()">Convert</span>
         <p class="convert-output"></p>
       </section>
     </main>
