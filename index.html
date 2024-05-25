@@ -9,12 +9,15 @@
 
       gtag('config', 'G-C2VBL142KX');
 
-      //When clicks it sends an event
+      //When a user clicks the span it sends an event with the current values
       function sendEvent() {
-        gtag('event', 'conversion', {
-          'event_category': 'button_click',
-          'event_label': 'convert_button'
-        });
+        var checkBox = document.querySelector('input[type="checkbox"]');
+         var parameter = document.querySelector('input[type="text"]');
+          gtag('event', 'conversion', {
+            'event_category': 'span_clicked',
+            'checkBox_type': modeCheckbox.checked ? 'Integer to Roman' : 'Roman to Integer',
+            'parameter_value': parameter.value
+          });
       }
     </script>
     <script src="romans.js"></script>
